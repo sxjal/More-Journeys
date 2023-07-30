@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:morejourneys/pages/welcome_page.dart";
 
 void main() {
   runApp(MyApp());
@@ -7,15 +8,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "My App",
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("My App"),
-        ),
-        body: Center(
-          child: Text("Hello World"),
-        ),
+        body: WelcomePage(),
       ),
     );
   }

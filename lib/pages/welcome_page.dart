@@ -25,10 +25,11 @@ class _WelcomePageState extends State<WelcomePage> {
             height: double.maxFinite,
             width: double.maxFinite,
             decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("assets/images/${images[index]}.png"),
-              fit: BoxFit.cover,
-            )),
+              image: DecorationImage(
+                image: AssetImage("img/${images[index]}"),
+                fit: BoxFit.cover,
+              ),
+            ),
           );
         },
       ),
