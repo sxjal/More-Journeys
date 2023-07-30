@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter/rendering.dart";
+import "package:morejourneys/misc/colors.dart";
 import "package:morejourneys/widgets/app_large_text.dart";
 import "package:morejourneys/widgets/app_text.dart";
 
@@ -34,12 +35,23 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             child: Container(
               margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
-              child: const Row(
+              child: Row(
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AppLargeText(text: "Trips"),
-                      AppText(text: "Mountain", size: 30),
+                      const AppLargeText(text: "Trips"),
+                      const AppText(text: "Mountain", size: 30),
+                      const SizedBox(height: 20),
+                      Container(
+                        width: 250,
+                        child: AppText(
+                          text:
+                              "Mountain hikes give you an incredible sense of freedom alone with endurance tests",
+                          color: AppColors.textColor2,
+                          size: 14,
+                        ),
+                      ),
                     ],
                   ),
                 ],
