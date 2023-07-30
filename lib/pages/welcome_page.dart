@@ -9,13 +9,28 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  List images = [
+    "welcome-one.png",
+    "welcome-two.png",
+    "welcome-three.png",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
         scrollDirection: Axis.vertical,
-        itemCount: 3,
-        itemBuilder: (context, index) {},
+        itemCount: images.length,
+        itemBuilder: (context, index) {
+          return Container(
+            height: double.maxFinite,
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("assets/images/${images[index]}.png"),
+              fit: BoxFit.cover,
+            )),
+          );
+        },
       ),
     );
   }
