@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter/rendering.dart";
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -11,7 +12,11 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView.builder(itemBuilder: (context,index){}),
+      body: PageView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: 3,
+        itemBuilder: (context, index) {},
+      ),
     );
   }
 }
