@@ -6,12 +6,20 @@ class ResponsiveButton extends StatelessWidget {
   //responsive is false if I want to use the same button in another screen but with the same size.
 
   //width is the size of the button in the respectiv screen
-  ResponsiveButton({super.key, this.width, this.responsive});
+  ResponsiveButton({super.key, this.width, this.responsive = false});
   double? width;
   bool? responsive;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      width: width,
+      height: 60,
+      child: Row(
+        children: [
+          Image.asset("img/button-one.png"),
+        ],
+      ),
+    );
   }
 }
