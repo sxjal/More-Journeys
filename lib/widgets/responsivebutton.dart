@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:morejourneys/misc/colors.dart';
 
 class ResponsiveButton extends StatelessWidget {
   //optional, I may or may not pass it.
@@ -15,6 +16,10 @@ class ResponsiveButton extends StatelessWidget {
     return Container(
       width: width,
       height: 60,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: AppColors.mainColor,
+      ),
       child: Row(
         children: [
           Image.asset("img/button-one.png"),
