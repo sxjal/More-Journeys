@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter/rendering.dart";
+import "package:morejourneys/widgets/app_large_text.dart";
+import "package:morejourneys/widgets/app_text.dart";
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -32,10 +34,13 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             child: Container(
               margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
-              child: Row(
+              child: const Row(
                 children: [
                   Column(
-                    children: [],
+                    children: [
+                      AppLargeText(text: "Trips"),
+                      AppText(text: "Mountain", size: 30),
+                    ],
                   ),
                 ],
               ),
