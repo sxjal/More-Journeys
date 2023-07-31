@@ -3,6 +3,7 @@ import 'package:morejourneys/misc/colors.dart';
 import 'package:morejourneys/widgets/app_large_text.dart';
 import 'package:morejourneys/widgets/app_text.dart';
 import 'package:morejourneys/widgets/appbuttons.dart';
+import 'package:morejourneys/widgets/responsivebutton.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -194,12 +195,32 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                     AppText(
                       text:
-                          "Yosemito Nationol Pork is located in control Siana Novadain the iS state of Callomo it is located near the wild protected areas.",
+                          "Yosemito Nationol Pork is located in central Siana Nevada the US state of California. It is located near the wild protected areas.",
+                      color: AppColors.mainTextColor,
                     ),
                   ],
                 ),
               ),
             ),
+            Positioned(
+              bottom: 20,
+              left: 20,
+              child: Row(
+                children: [
+                  AppButtons(
+                    color: AppColors.textColor1,
+                    backgroundColor: Colors.white,
+                    size: 60,
+                    bordercolor: AppColors.textColor1,
+                    icon: Icons.favorite_border,
+                    isIcon: true,
+                  ),
+                  ResponsiveButton(
+                    responsive: true,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
