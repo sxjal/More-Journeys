@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:morejourneys/misc/colors.dart';
+import 'package:morejourneys/widgets/app_large_text.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -21,7 +23,7 @@ class _DetailPageState extends State<DetailPage> {
               right: 0,
               child: Container(
                 width: double.maxFinite,
-                height: 300,
+                height: 400,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("img/mountain.jpeg"),
@@ -53,6 +55,40 @@ class _DetailPageState extends State<DetailPage> {
                 ],
               ),
             ),
+            Positioned(
+              top: 300,
+              child: Container(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                  top: 30,
+                ),
+                width: MediaQuery.of(context).size.width,
+                height: 550,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        AppLargeText(
+                          text: "Yosemite",
+                          color: Colors.black54.withOpacity(0.8),
+                        ),
+                        AppLargeText(
+                            text: "\$ 250", color: AppColors.mainColor),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
