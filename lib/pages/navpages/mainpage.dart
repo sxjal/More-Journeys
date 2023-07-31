@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:morejourneys/pages/navpages/baritempage.dart';
+import 'package:morejourneys/pages/navpages/homepage.dart';
 import 'package:morejourneys/pages/navpages/mypage.dart';
 import 'package:morejourneys/pages/navpages/searchpage.dart';
 
@@ -12,11 +13,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = const [
+    HomePage(),
     BarItemPage(),
     SearchPage(),
     MyPage(),
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
