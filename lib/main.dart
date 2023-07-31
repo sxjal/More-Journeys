@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:morejourneys/pages/detailpage.dart";
 import "package:morejourneys/pages/navpages/mainpage.dart";
 import "package:morejourneys/pages/welcome_page.dart";
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: "My App",
       home: Scaffold(
-        body: MainPage(), //WelcomePage(),
+        body: DetailPage(), //WelcomePage(),
       ),
     );
   }
