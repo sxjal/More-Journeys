@@ -13,7 +13,15 @@ class HomePage extends StatefulWidget {
 
 //tickerproviderstatemixing is for the tab bar controller
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  List images = [];
+  //map with key pair values
+  //to use them in the app
+  var images = {
+    "balloning.png": "Balloning",
+    "hiking.png": "Hiking",
+    "kayaking.png": "Kayaking",
+    "snorkling.png": "Snorkling",
+  };
+
   @override
   Widget build(BuildContext context) {
     TabController? _tabController = TabController(length: 3, vsync: this);
@@ -137,24 +145,37 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             width: double.maxFinite,
             padding: const EdgeInsets.only(left: 20),
             child: ListView.builder(
+              scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(right: 50),
-                      width: 80,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 159, 59, 59),
-                        image: const DecorationImage(
-                          image: AssetImage("img/mountain.jpeg"),
-                          fit: BoxFit.cover,
+                return Container(
+                  margin: const EdgeInsets.only(right: 30),
+                  child: Column(
+                    children: [
+                      Container(
+                        // margin: const EdgeInsets.only(right: 50),
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: const Color.fromARGB(255, 159, 59, 59),
+                          image: DecorationImage(
+                            image: AssetImage(
+                                "img/${images.keys.elementAt(index)}"),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                          child: AppText(
+                        text: images.values.elementAt(index),
+                        color: AppColors.textColor2,
+                      )),
+                    ],
+                  ),
                 );
               },
             ),
