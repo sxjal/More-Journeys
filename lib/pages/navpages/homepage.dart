@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:morejourneys/misc/colors.dart';
 import 'package:morejourneys/widgets/app_large_text.dart';
+import 'package:morejourneys/widgets/app_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -85,8 +86,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
 
           Container(
-            //margin: const EdgeInsets.all(10),
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.only(left: 10),
             height: 300,
             width: double.maxFinite,
             child: TabBarView(
@@ -94,8 +94,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               children: [
                 ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 3,
+                  itemCount: 5,
                   itemBuilder: (context, index) => Container(
+                    margin: const EdgeInsets.only(right: 10, top: 10),
                     width: 200,
                     height: 300,
                     decoration: BoxDecoration(
@@ -106,6 +107,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
+                ),
+                Text("Inspiration"),
+                Text("Emotions"),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargeText(text: "Explore more", size: 22),
+                AppText(
+                  text: "See all",
+                  color: AppColors.textColor1,
                 ),
               ],
             ),
