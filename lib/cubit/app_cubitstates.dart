@@ -6,6 +6,9 @@ abstract class CubitState extends Equatable {
 
 //every cubut class must have initial state,
 //and the initial state must extend the cubit state
+//this state gets triggered automatically
+
+//after this, welcome state gets triggered
 class InitialState extends CubitState {
   @override
   //[] should consist of the data that has to be changed.

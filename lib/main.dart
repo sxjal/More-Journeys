@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
+import "package:morejourneys/cubit/app_cubit_logics.dart";
 import "package:morejourneys/cubit/app_cubits.dart";
 import "package:morejourneys/pages/detailpage.dart";
 import "package:morejourneys/pages/navpages/mainpage.dart";
@@ -19,8 +20,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: BlocProvider<AppCubits>(
           create: (context) => AppCubits(),
-          
-          child: ,
+          child: AppCubitLogics(),
         ),
       ),
     );
