@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
           ),
-
+          //tab bar view
           Container(
             padding: const EdgeInsets.only(left: 10),
             height: 300,
@@ -133,12 +133,30 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             height: 20,
           ),
           Container(
-            padding: const EdgeInsets.only(
-              left: 20,
-            ),
+            height: 120,
+            width: double.maxFinite,
+            padding: const EdgeInsets.only(left: 20),
             child: ListView.builder(
               itemCount: 4,
-              itemBuilder: (context, index) {},
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(right: 50),
+                      width: 80,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color.fromARGB(255, 159, 59, 59),
+                        image: const DecorationImage(
+                          image: AssetImage("img/mountain.jpeg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
           ),
         ],
