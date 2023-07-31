@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import "package:flutter/material.dart";
 import "package:morejourneys/pages/detailpage.dart";
 import "package:morejourneys/pages/navpages/mainpage.dart";
