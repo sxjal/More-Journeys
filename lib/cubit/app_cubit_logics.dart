@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:morejourneys/cubit/app_cubits.dart';
 import 'package:morejourneys/cubit/app_cubitstates.dart';
+import 'package:morejourneys/pages/detailpage.dart';
 import 'package:morejourneys/pages/navpages/mainpage.dart';
 import 'package:morejourneys/pages/welcome_page.dart';
 
@@ -31,8 +32,12 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
 
         if (state is LoadedState) {
           return const MainPage();
-        } else
+        }
+        if (state is DetailState) {
+          return const DetailPage();
+        } else {
           return Container();
+        }
       }),
     );
   }

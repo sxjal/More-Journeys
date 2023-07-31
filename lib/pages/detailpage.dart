@@ -1,4 +1,7 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:morejourneys/cubit/app_cubits.dart';
 import 'package:morejourneys/misc/colors.dart';
 import 'package:morejourneys/widgets/app_large_text.dart';
 import 'package:morejourneys/widgets/app_text.dart';
@@ -29,7 +32,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Container(
                 width: double.maxFinite,
                 height: 400,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("img/mountain.jpeg"),
                     fit: BoxFit.cover,
@@ -44,7 +47,9 @@ class _DetailPageState extends State<DetailPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      BlocProvider.of<AppCubits>(context).goHome();
+                    },
                     icon: const Icon(
                       Icons.menu,
                       color: Colors.white,
@@ -53,7 +58,7 @@ class _DetailPageState extends State<DetailPage> {
                   const SizedBox(
                     width: 300,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.more_vert,
                     color: Colors.white,
                   ),
