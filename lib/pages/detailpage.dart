@@ -147,6 +147,20 @@ class _DetailPageState extends State<DetailPage> {
                       text: "Number of people in your group",
                       color: AppColors.mainTextColor,
                     ),
+                    Wrap(
+                      children: List.generate(
+                        5,
+                        (index) => Container(
+                          margin: ,
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: AppColors.buttonBackground,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
