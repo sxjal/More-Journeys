@@ -8,7 +8,12 @@ abstract class AppCubitState extends Equatable {
 //and the initial state must extend the cubit state
 class InitialState extends AppCubitState {
   @override
-  List<Object?> get props => [];
+  //[] should consist of the data that has to be changed.
+  //this page is not doing any change in data
+
+  //so if the data is changed anywhere in the app then
+  //cubit will automatically track the change and rebuild the UI
+  List<Object> get props => [];
 }
 
 //ones thats done, we need to trigger our main welcomepage which
@@ -16,5 +21,5 @@ class InitialState extends AppCubitState {
 
 class WelcomeState extends AppCubitState {
   @override
-  List<Object?> get props => [];
+  List<Object> get props => [];
 }
