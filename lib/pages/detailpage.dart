@@ -11,6 +11,7 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  int gottenStars = 3;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +75,9 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //title and price
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -89,6 +92,7 @@ class _DetailPageState extends State<DetailPage> {
                     const SizedBox(
                       height: 10,
                     ),
+                    //location and icon
                     Row(
                       children: [
                         Icon(
@@ -105,7 +109,43 @@ class _DetailPageState extends State<DetailPage> {
                       ],
                     ),
                     const SizedBox(
-                      width: 20,
+                      height: 20,
+                    ),
+                    //rating stars
+                    Row(
+                      children: [
+                        Wrap(
+                          children: List.generate(
+                            5,
+                            (index) => Icon(
+                              Icons.star,
+                              color: index < gottenStars
+                                  ? AppColors.starColor
+                                  : AppColors.textColor2,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        AppText(
+                          text: "(4.0)",
+                          color: AppColors.textColor2,
+                        )
+                      ],
+                    ),
+                    //Poople
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    AppLargeText(
+                      text: "People",
+                      size: 20,
+                      color: Colors.black.withOpacity(0.8),
+                    ),
+                    AppText(
+                      text: "Number of people in your group",
+                      color: AppColors.mainTextColor,
                     ),
                   ],
                 ),
