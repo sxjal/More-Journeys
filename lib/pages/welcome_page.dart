@@ -56,8 +56,8 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       const SizedBox(height: 40),
                       ResponsiveButton(
-                        width: 120,
-                      ),
+                          // width: 120,
+                          ),
                     ],
                   ),
                   // const Spacer(),

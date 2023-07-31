@@ -8,7 +8,7 @@ class ResponsiveButton extends StatelessWidget {
   //responsive is false if I want to use the same button in another screen but with the same size.
 
   //width is the size of the button in the respectiv screen
-  ResponsiveButton({super.key, this.width, this.responsive = false});
+  ResponsiveButton({super.key, this.width = 120, this.responsive = false});
   double? width;
   bool? responsive;
 
@@ -16,16 +16,31 @@ class ResponsiveButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: Container(
-        width: width,
+        width: responsive! ? double.maxFinite : width,
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: AppColors.mainColor,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: responsive == true
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
           children: [
-            if (responsive == true) const Text("Book Trip Now"),
+            responsive == true
+                ? Container(
+                    margin: const EdgeInsets.only(
+                      left: 20,
+                    ),
+                    child: const Text(
+                      "Book Trip Now",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  )
+                : Container(),
             Image.asset("img/button-one.png"),
           ],
         ),

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: "My App",
       home: Scaffold(
-        body: DetailPage(), //WelcomePage(),
+        body: DetailPage(), // WelcomePage(),
       ),
     );
   }

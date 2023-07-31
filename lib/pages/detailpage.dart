@@ -203,8 +203,9 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-              bottom: 20,
+              bottom: 40,
               left: 20,
+              right: 20,
               child: Row(
                 children: [
                   AppButtons(
@@ -214,6 +215,9 @@ class _DetailPageState extends State<DetailPage> {
                     bordercolor: AppColors.textColor1,
                     icon: Icons.favorite_border,
                     isIcon: true,
+                  ),
+                  const SizedBox(
+                    width: 20,
                   ),
                   ResponsiveButton(
                     responsive: true,
