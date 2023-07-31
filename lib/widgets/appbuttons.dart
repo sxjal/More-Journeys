@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:morejourneys/widgets/app_text.dart';
 
-import '../misc/colors.dart';
-
+// ignore: must_be_immutable
 class AppButtons extends StatelessWidget {
   AppButtons({
     super.key,
@@ -33,6 +33,14 @@ class AppButtons extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(15),
       ),
+      child: !(isIcon!)
+          ? Center(
+              child: AppText(
+                text: text!,
+                color: Colors.black,
+              ),
+            )
+          : Icon(icon),
     );
   }
 }

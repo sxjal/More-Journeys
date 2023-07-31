@@ -156,6 +156,7 @@ class _DetailPageState extends State<DetailPage> {
                           backgroundColor: AppColors.buttonBackground,
                           size: 60,
                           bordercolor: AppColors.buttonBackground,
+                          text: index.toString(),
                         ),
                       ),
                     ),
