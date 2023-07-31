@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:morejourneys/misc/colors.dart';
 
+// ignore: must_be_immutable
 class ResponsiveButton extends StatelessWidget {
   //optional, I may or may not pass it.
   //responsive is true if I want to use the same button in another screen but with different size.

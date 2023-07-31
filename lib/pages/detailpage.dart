@@ -12,7 +12,8 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
-  int gottenStars = 3;
+  int selectedindex = -1;
+  int gottenStars = 4;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,7 +136,7 @@ class _DetailPageState extends State<DetailPage> {
                         )
                       ],
                     ),
-                    //Poople
+                    //People
                     const SizedBox(
                       height: 25,
                     ),
@@ -148,17 +149,52 @@ class _DetailPageState extends State<DetailPage> {
                       text: "Number of people in your group",
                       color: AppColors.mainTextColor,
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Wrap(
                       children: List.generate(
                         5,
-                        (index) => AppButtons(
-                          color: Colors.white,
-                          backgroundColor: AppColors.buttonBackground,
-                          size: 60,
-                          bordercolor: AppColors.buttonBackground,
-                          text: index.toString(),
+                        (index) => InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedindex = index;
+                            });
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(
+                              right: 10,
+                            ),
+                            child: AppButtons(
+                              color: selectedindex == index
+                                  ? Colors.white
+                                  : Colors.black,
+                              backgroundColor: selectedindex == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              size: 60,
+                              bordercolor: selectedindex == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              text: (index + 1).toString(),
+                            ),
+                          ),
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    AppLargeText(
+                        text: "Description",
+                        color: Colors.black.withOpacity(0.8),
+                        size: 20),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    AppText(
+                      text:
+                          "Yosemito Nationol Pork is located in control Siana Novadain the iS state of Callomo it is located near the wild protected areas.",
                     ),
                   ],
                 ),
