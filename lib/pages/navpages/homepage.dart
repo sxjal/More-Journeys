@@ -99,7 +99,6 @@ class CircleTabIndicator extends Decoration {
   double radius;
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-    // TODO: implement createBoxPainter
     return _CirlcePainter(color: color, radius: radius);
   }
 }
@@ -109,5 +108,10 @@ class _CirlcePainter extends BoxPainter {
   final Color color;
   double radius;
   @override
-  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {}
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+    Paint paint = Paint();
+    paint.color = color;
+    paint.isAntiAlias = true;
+    canvas.drawCircle(offset, radius, paint);
+  }
 }
