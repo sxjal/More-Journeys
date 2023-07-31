@@ -129,6 +129,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ],
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            padding: const EdgeInsets.only(
+              left: 20,
+            ),
+            child: ListView.builder(
+              itemCount: 4,
+              itemBuilder: (context, index) {},
+            ),
+          ),
         ],
       ),
     );
