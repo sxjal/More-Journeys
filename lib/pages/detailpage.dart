@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:morejourneys/misc/colors.dart';
 import 'package:morejourneys/widgets/app_large_text.dart';
 import 'package:morejourneys/widgets/app_text.dart';
+import 'package:morejourneys/widgets/appbuttons.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -150,15 +151,7 @@ class _DetailPageState extends State<DetailPage> {
                     Wrap(
                       children: List.generate(
                         5,
-                        (index) => Container(
-                          margin: ,
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: AppColors.buttonBackground,
-                          ),
-                        ),
+                        (index) => AppButtons(),
                       ),
                     ),
                   ],
