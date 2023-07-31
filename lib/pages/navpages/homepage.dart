@@ -11,9 +11,9 @@ class HomePage extends StatefulWidget {
 
 //tickerproviderstatemixing is for the tab bar controller
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  TabController? _tabController;
   @override
   Widget build(BuildContext context) {
+    TabController? _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       //safeAreaview: false,
       body: Column(
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Container(
             child: TabBar(
               controller: _tabController,
-              tabs: [
+              tabs: const [
                 Tab(
                   text: "Places",
                 ),
@@ -72,6 +72,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
           Container(
             child: TabBarView(
+              controller: _tabController,
               children: [Text("hi"), Text("there"), Text("by")],
             ),
           ),
