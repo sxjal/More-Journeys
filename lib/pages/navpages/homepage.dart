@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 //tickerproviderstatemixing is for the tab bar controller
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  List images = [];
   @override
   Widget build(BuildContext context) {
     TabController? _tabController = TabController(length: 3, vsync: this);
@@ -82,25 +83,30 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
           ),
+
           Container(
+            //margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             height: 300,
             width: double.maxFinite,
             child: TabBarView(
               controller: _tabController,
               children: [
-                Container(
-                  width: 200,
-                  height: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    image: const DecorationImage(
-                      image: AssetImage("img/mountain.jpeg"),
+                ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: (context, index) => Container(
+                    width: 200,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      image: const DecorationImage(
+                        image: AssetImage("img/mountain.jpeg"),
+                      ),
                     ),
                   ),
                 ),
-                Text("there"),
-                Text("by")
               ],
             ),
           ),
@@ -131,7 +137,7 @@ class _CirlcePainter extends BoxPainter {
     paint.isAntiAlias = true;
     final Offset circleoffset = Offset(
         configuration.size!.width / 2 - radius / 2,
-        configuration.size!.height - radius / 2);
+        configuration.size!.height - radius);
     canvas.drawCircle(offset + circleoffset, radius, paint);
   }
 }
