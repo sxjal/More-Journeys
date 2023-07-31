@@ -36,7 +36,11 @@ class _MainPageState extends State<MainPage> {
         unselectedItemColor: Colors.black26,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        elevation: 0,
+        selectedFontSize: 0,
+        unselectedFontSize: 0,
+        //elevation: 0,
+        //type: BottomNavigationBarType.,
+        //backgroundColor: Colors.red,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.apps), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Bar"),
