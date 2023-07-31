@@ -94,19 +94,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 }
 
 class CircleTabIndicator extends Decoration {
+  CircleTabIndicator({required this.color, required this.radius});
+  final Color color;
+  double radius;
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
     // TODO: implement createBoxPainter
-    return _CirlcePainter();
+    return _CirlcePainter(color: color, radius: radius);
   }
 }
 
 class _CirlcePainter extends BoxPainter {
+  _CirlcePainter({required this.color, required this.radius});
+  final Color color;
+  double radius;
   @override
-  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    // TODO: implement paint
-  }
-
-  @override
-
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {}
 }
