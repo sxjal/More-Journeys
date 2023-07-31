@@ -1,12 +1,12 @@
 import "package:equatable/equatable.dart";
 
-abstract class AppCubitState extends Equatable {
-  const AppCubitState();
+abstract class CubitState extends Equatable {
+  const CubitState();
 }
 
 //every cubut class must have initial state,
 //and the initial state must extend the cubit state
-class InitialState extends AppCubitState {
+class InitialState extends CubitState {
   @override
   //[] should consist of the data that has to be changed.
   //this page is not doing any change in data
@@ -19,7 +19,7 @@ class InitialState extends AppCubitState {
 //ones thats done, we need to trigger our main welcomepage which
 //will be done by creating a new state called WelcomeState
 
-class WelcomeState extends AppCubitState {
+class WelcomeState extends CubitState {
   @override
   List<Object> get props => [];
 }

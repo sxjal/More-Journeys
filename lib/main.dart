@@ -1,6 +1,8 @@
 // ignore_for_file: unused_import
 
 import "package:flutter/material.dart";
+import "package:flutter_bloc/flutter_bloc.dart";
+import "package:morejourneys/cubit/app_cubits.dart";
 import "package:morejourneys/pages/detailpage.dart";
 import "package:morejourneys/pages/navpages/mainpage.dart";
 import "package:morejourneys/pages/welcome_page.dart";
@@ -12,10 +14,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "My App",
       home: Scaffold(
-        body: DetailPage(), // WelcomePage(),
+        body: BlocProvider<AppCubits>(
+          create: (context) => AppCubits(),
+          
+          child: ,
+        ),
       ),
     );
   }
