@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:morejourneys/cubit/app_cubits.dart';
 import 'package:morejourneys/cubit/app_cubitstates.dart';
+import 'package:morejourneys/pages/navpages/mainpage.dart';
 import 'package:morejourneys/pages/welcome_page.dart';
 
 class AppCubitLogics extends StatefulWidget {
@@ -21,10 +22,16 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
       body: BlocBuilder<AppCubits, CubitState>(builder: (context, state) {
         //using this blocbuilder, we will be checking on states.
 
-        if (state is WelcomeState) return WelcomePage();
-        if (state is LoadingState)
-          return Center(child: CircularProgressIndicator());
-        else
+        if (state is WelcomeState) {
+          return const WelcomePage();
+        }
+        if (state is LoadingState) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        if (state is LoadedState) {
+          return const MainPage();
+        } else
           return Container();
       }),
     );

@@ -1,8 +1,7 @@
 import "package:equatable/equatable.dart";
+import "package:morejourneys/models/datamodel.dart";
 
-abstract class CubitState extends Equatable {
-  const CubitState();
-}
+abstract class CubitState extends Equatable {}
 
 //every cubut class must have initial state,
 //and the initial state must extend the cubit state
@@ -33,6 +32,15 @@ class LoadingState extends CubitState {
 }
 
 class LoadedState extends CubitState {
+  LoadedState(this.places);
+  final List<DataModel> places;
   @override
-  List<Object> get props => [];
+  List<Object> get props => [places];
+}
+
+class DetailState extends CubitState {
+  DetailState(this.place);
+  final DataModel place;
+  @override
+  List<Object> get props => [place];
 }

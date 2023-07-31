@@ -7,6 +7,7 @@ import "package:morejourneys/cubit/app_cubits.dart";
 import "package:morejourneys/pages/detailpage.dart";
 import "package:morejourneys/pages/navpages/mainpage.dart";
 import "package:morejourneys/pages/welcome_page.dart";
+import "package:morejourneys/services/dataservices.dart";
 
 void main() {
   runApp(MyApp());
@@ -19,8 +20,10 @@ class MyApp extends StatelessWidget {
       title: "My App",
       home: Scaffold(
         body: BlocProvider<AppCubits>(
-          create: (context) => AppCubits(),
-          child: AppCubitLogics(),
+          create: (context) => AppCubits(
+            data: DataService(),
+          ),
+          child: const AppCubitLogics(),
         ),
       ),
     );
