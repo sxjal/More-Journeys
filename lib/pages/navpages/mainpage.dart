@@ -23,6 +23,11 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black54,
+        unselectedItemColor: Colors.black26,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        elevation: 0,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.apps), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Bar"),
@@ -30,6 +35,7 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "My"),
         ],
       ),
+      body: pages[0],
     );
   }
 }
