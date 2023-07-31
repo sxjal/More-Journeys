@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:morejourneys/misc/colors.dart';
 import 'package:morejourneys/widgets/app_large_text.dart';
+import 'package:morejourneys/widgets/app_text.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -85,10 +86,31 @@ class _DetailPageState extends State<DetailPage> {
                             text: "\$ 250", color: AppColors.mainColor),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: AppColors.mainColor,
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        AppText(
+                          text: "USA, California",
+                          color: AppColors.mainTextColor,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
