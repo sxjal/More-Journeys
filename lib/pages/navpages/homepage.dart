@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:morejourneys/widgets/app_large_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +15,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //safeAreaview: false,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             padding: const EdgeInsets.only(left: 20, right: 20),
@@ -34,6 +37,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: const EdgeInsets.only(
+              left: 20,
+            ),
+            child: const AppLargeText(text: "Discover"),
+          )
         ],
       ),
     );
