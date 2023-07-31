@@ -151,7 +151,12 @@ class _DetailPageState extends State<DetailPage> {
                     Wrap(
                       children: List.generate(
                         5,
-                        (index) => AppButtons(),
+                        (index) => AppButtons(
+                          color: Colors.white,
+                          backgroundColor: AppColors.buttonBackground,
+                          size: 60,
+                          bordercolor: AppColors.buttonBackground,
+                        ),
                       ),
                     ),
                   ],
