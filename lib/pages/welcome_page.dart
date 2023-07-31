@@ -3,6 +3,7 @@ import "package:flutter/rendering.dart";
 import "package:morejourneys/misc/colors.dart";
 import "package:morejourneys/widgets/app_large_text.dart";
 import "package:morejourneys/widgets/app_text.dart";
+import "package:morejourneys/widgets/responsivebutton.dart";
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -36,6 +37,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Container(
               margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +54,25 @@ class _WelcomePageState extends State<WelcomePage> {
                           size: 14,
                         ),
                       ),
+                      const SizedBox(height: 40),
+                      ResponsiveButton(
+                        width: 120,
+                      ),
                     ],
+                  ),
+                  // const Spacer(),
+                  Column(
+                    children: List.generate(
+                      3,
+                      (index) => Container(
+                        width: 8,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: AppColors.mainColor,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

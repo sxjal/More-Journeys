@@ -21,7 +21,9 @@ class ResponsiveButton extends StatelessWidget {
         color: AppColors.mainColor,
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          if (responsive == true) const Text("Book Trip Now"),
           Image.asset("img/button-one.png"),
         ],
       ),
