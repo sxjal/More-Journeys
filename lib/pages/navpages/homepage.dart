@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 //indicatorColor: Colors.white,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicator:
-                    CircleTabIndicator(color: AppColors.mainColor, radius: 3),
+                    CircleTabIndicator(color: AppColors.mainColor, radius: 4),
                 tabs: const [
                   Tab(
                     text: "Places",
@@ -87,7 +87,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             width: double.maxFinite,
             child: TabBarView(
               controller: _tabController,
-              children: [Text("hi"), Text("there"), Text("by")],
+              children: [
+                Container(
+                  width: 200,
+                  height: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    image: const DecorationImage(
+                      image: AssetImage("img/mountain.jpeg"),
+                    ),
+                  ),
+                ),
+                Text("there"),
+                Text("by")
+              ],
             ),
           ),
         ],
@@ -115,6 +129,9 @@ class _CirlcePainter extends BoxPainter {
     Paint paint = Paint();
     paint.color = color;
     paint.isAntiAlias = true;
-    canvas.drawCircle(offset, radius, paint);
+    final Offset circleoffset = Offset(
+        configuration.size!.width / 2 - radius / 2,
+        configuration.size!.height - radius / 2);
+    canvas.drawCircle(offset + circleoffset, radius, paint);
   }
 }
