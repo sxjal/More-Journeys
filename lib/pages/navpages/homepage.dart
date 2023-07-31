@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:morejourneys/misc/colors.dart';
 import 'package:morejourneys/widgets/app_large_text.dart';
 
 class HomePage extends StatefulWidget {
@@ -65,6 +66,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 isScrollable: true,
                 //indicatorColor: Colors.white,
                 indicatorSize: TabBarIndicatorSize.label,
+                indicator:
+                    CircleTabIndicator(color: AppColors.mainColor, radius: 3),
                 tabs: const [
                   Tab(
                     text: "Places",
