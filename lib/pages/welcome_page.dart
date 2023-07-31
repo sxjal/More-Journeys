@@ -24,13 +24,13 @@ class _WelcomePageState extends State<WelcomePage> {
       body: PageView.builder(
         scrollDirection: Axis.vertical,
         itemCount: images.length,
-        itemBuilder: (context, index) {
+        itemBuilder: (context, pageindex) {
           return Container(
             height: double.maxFinite,
             width: double.maxFinite,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("img/${images[index]}"),
+                image: AssetImage("img/${images[pageindex]}"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -65,11 +65,14 @@ class _WelcomePageState extends State<WelcomePage> {
                     children: List.generate(
                       3,
                       (index) => Container(
+                        margin: const EdgeInsets.only(top: 2),
                         width: 8,
-                        height: 25,
+                        height: index == pageindex ? 25 : 8,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: AppColors.mainColor,
+                          color: index == pageindex
+                              ? AppColors.mainColor
+                              : AppColors.mainColor.withOpacity(0.3),
                         ),
                       ),
                     ),
