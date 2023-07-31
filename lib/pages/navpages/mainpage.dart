@@ -36,6 +36,8 @@ class _MainPageState extends State<MainPage> {
         unselectedItemColor: Colors.black26,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        // setting size to zero just in case the user tabs the last part
+
         selectedFontSize: 0,
         unselectedFontSize: 0,
         //elevation: 0,
