@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:morejourneys/pages/navpages/baritempage.dart';
-import 'package:morejourneys/pages/navpages/homepage.dart';
+import 'package:morejourneys/pages/homepage.dart';
 import 'package:morejourneys/pages/navpages/mypage.dart';
 import 'package:morejourneys/pages/navpages/searchpage.dart';
 

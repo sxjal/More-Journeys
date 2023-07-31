@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:morejourneys/misc/colors.dart';
 import 'package:morejourneys/widgets/app_large_text.dart';
 import 'package:morejourneys/widgets/app_text.dart';
@@ -186,6 +185,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 }
 
+// ignore: must_be_immutable
 class CircleTabIndicator extends Decoration {
   CircleTabIndicator({required this.color, required this.radius});
   final Color color;
