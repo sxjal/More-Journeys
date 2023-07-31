@@ -55,22 +55,33 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
           //tab bar
           Container(
-            child: TabBar(
-              controller: _tabController,
-              tabs: const [
-                Tab(
-                  text: "Places",
-                ),
-                Tab(
-                  text: "Inspiration",
-                ),
-                Tab(
-                  text: "Emotions",
-                ),
-              ],
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: TabBar(
+                padding: const EdgeInsets.only(left: 10, right: 20),
+                controller: _tabController,
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.black54,
+                isScrollable: true,
+                //indicatorColor: Colors.white,
+                indicatorSize: TabBarIndicatorSize.label,
+                tabs: const [
+                  Tab(
+                    text: "Places",
+                  ),
+                  Tab(
+                    text: "Inspiration",
+                  ),
+                  Tab(
+                    text: "Emotions",
+                  ),
+                ],
+              ),
             ),
           ),
           Container(
+            height: 300,
+            width: double.maxFinite,
             child: TabBarView(
               controller: _tabController,
               children: [Text("hi"), Text("there"), Text("by")],
@@ -80,4 +91,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
     );
   }
+}
+
+class CircleTabIndicator extends Decoration {
+  @override
+  BoxPainter createBoxPainter([VoidCallback? onChanged]) {
+    // TODO: implement createBoxPainter
+    return _CirlcePainter();
+  }
+}
+
+class _CirlcePainter extends BoxPainter {
+  @override
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+    // TODO: implement paint
+  }
+
+  @override
+
 }
