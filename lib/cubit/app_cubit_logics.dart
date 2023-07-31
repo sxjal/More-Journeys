@@ -21,8 +21,9 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
       body: BlocBuilder<AppCubits, CubitState>(builder: (context, state) {
         //using this blocbuilder, we will be checking on states.
 
-        if (state is WelcomeState)
-          return WelcomePage();
+        if (state is WelcomeState) return WelcomePage();
+        if (state is LoadingState)
+          return Center(child: CircularProgressIndicator());
         else
           return Container();
       }),

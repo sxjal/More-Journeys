@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter/rendering.dart";
+import "package:flutter_bloc/flutter_bloc.dart";
+import "package:morejourneys/cubit/app_cubits.dart";
 import "package:morejourneys/misc/colors.dart";
 import "package:morejourneys/widgets/app_large_text.dart";
 import "package:morejourneys/widgets/app_text.dart";
@@ -55,9 +57,15 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                       ),
                       const SizedBox(height: 40),
-                      ResponsiveButton(
-                          // width: 120,
-                          ),
+                      GestureDetector(
+                        onTap: () {
+                          BlocProvider.of<AppCubits>(context).getData();
+                        },
+                        child: Container(
+                          // width: 200,
+                          child: ResponsiveButton(width: 120),
+                        ),
+                      ),
                     ],
                   ),
                   // const Spacer(),

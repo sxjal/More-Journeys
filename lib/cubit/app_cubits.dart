@@ -7,5 +7,14 @@ class AppCubits extends Cubit<CubitState> {
 
     //initializing the state of the cubit with IntialState class and then we will
     //emit the WelcomeState class
+
+    //void getData() {}
+  }
+  void getData() {
+    try {
+      emit(LoadingState());
+    } catch (e) {
+      print(e);
+    }
   }
 }

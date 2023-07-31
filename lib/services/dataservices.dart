@@ -1,11 +1,11 @@
 import "dart:convert";
-import "dart:io";
 
 import "package:http/http.dart" as http;
+import "package:morejourneys/models/datamodel.dart";
 
 class DataService {
   String baseurl = "http://mark.bslmeiyu.com/api";
-  void getInfo() async {
+  Future<List<DataModel>> getInfo() async {
     var apiUrl = '/getplaces';
 
     final response = await http.get(Uri.parse(baseurl + apiUrl));
@@ -13,11 +13,13 @@ class DataService {
     try {
       if (response.statusCode == 200) {
         List<dynamic> list = json.decode(response.body);
-        
-      }
+        return list.map((e) => DataModel.fromJson(e)).toList();
+      } else
+        return <DataModel>[];
     } catch (e) {
       print(response.statusCode);
       print(e);
+      return <DataModel>[];
     }
   }
 }
