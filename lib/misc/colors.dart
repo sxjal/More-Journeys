@@ -8,4 +8,5 @@ class AppColors{
   static final Color starColor = Color(0xFFe7bb4e);
   static final Color mainTextColor = Color(0xFFababad);
   static final Color buttonBackground = Color(0xFFf1f1f9);
+  static final Color randomusecolor = Colors.black54;
 }
